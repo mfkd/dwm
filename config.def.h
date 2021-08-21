@@ -27,7 +27,6 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	//{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -62,15 +61,9 @@ static const char *kitty1[]  = { "kitty", "-1", NULL };
 static const char *browser[]  = { "google-chrome-stable", NULL };
 static const char *pbrowser[]  = { "google-chrome-stable", "--incognito", NULL };
 static const char *slock[]  = { "slock", NULL };
-// static const char *mpdmenu_library[]  = { "mpdmenu", "-l", "::", "-i", "-l", "20", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", normbordercolor, "-sf", selfgcolor, NULL };
-// static const char *mpdmenu_playlist[] = { "mpdmenu", "-p", "::", "-i", "-l", "20", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", normbordercolor, "-sf", selfgcolor, NULL };
-//static const char *mpdmenu_addplaylist[]  = { "mpdmenu", "-a", "::", "-i", "-l", "20", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", normbordercolor, "-sf", selfgcolor, NULL };
 static const char *volup[]  = { "amixer", "-q", "-M", "set", "Master", "2%+", "unmute", NULL };
 static const char *voldown[]  = { "amixer", "-q", "-M", "set", "Master", "2%-", "unmute", NULL };
 static const char *volzero[]  = { "amixer", "-M", "sset", "Master", "0%", NULL };
-//static const char *mpdtoggle[]  = { "mpc", "-q", "toggle", NULL };
-//static const char *mpdnext[]  = { "mpc", "-q", "next", NULL };
-//static const char *mpdprev[]  = { "mpc", "-q", "prev", NULL };
 static const char *clipmenu[] = { "clipmenu", "-i", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", normbordercolor, "-sf", selfgcolor, NULL };
 static const char *passmenu[] = { "passmenu", "-i", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", normbordercolor, "-sf", selfgcolor, NULL };
 
@@ -84,7 +77,6 @@ static Key keys[] = {
 	{ MODKEY,               XK_bracketright, spawn,          {.v = clipmenu } },
 	{ MODKEY|ControlMask,   XK_bracketright, spawn,          {.v = passmenu } },
 	{ MODKEY|ShiftMask,     XK_minus,      spawn,          {.v = volzero } },
-	//{ MODKEY|ShiftMask,     XK_equal,      spawn,          {.v = mpdtoggle } },
 	{ MODKEY,               XK_minus,        spawn,          {.v = voldown } },
 	{ MODKEY,               XK_equal,        spawn,          {.v = volup } },
 	{ MODKEY,               XK_Delete,       spawn,          {.v = slock } },
