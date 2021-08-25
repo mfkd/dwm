@@ -60,6 +60,7 @@ static const char *termcmd[]  = { "kitty", NULL };
 static const char *kitty1[]  = { "kitty", "-1", NULL };
 static const char *browser[]  = { "google-chrome-stable", NULL };
 static const char *pbrowser[]  = { "google-chrome-stable", "--incognito", NULL };
+static const char *darkbrowser[]  = { "google-chrome-stable", "--enable-features=WebUIDarkMode", "--force-dark-mode", NULL };
 static const char *slock[]  = { "slock", NULL };
 static const char *volup[]  = { "amixer", "-q", "-M", "set", "Master", "2%+", "unmute", NULL };
 static const char *voldown[]  = { "amixer", "-q", "-M", "set", "Master", "2%-", "unmute", NULL };
@@ -74,6 +75,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,   XK_Return,       spawn,          {.v = kitty1 } },
 	{ MODKEY,               XK_backslash,    spawn,          {.v = browser } },
 	{ MODKEY|ControlMask,   XK_backslash,    spawn,          {.v = pbrowser } },
+	{ MODKEY|ShiftMask,     XK_backslash,    spawn,          {.v = darkbrowser } },
 	{ MODKEY,               XK_bracketright, spawn,          {.v = clipmenu } },
 	{ MODKEY|ControlMask,   XK_bracketright, spawn,          {.v = passmenu } },
 	{ MODKEY|ShiftMask,     XK_minus,        spawn,          {.v = volzero } },
