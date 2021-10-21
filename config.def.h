@@ -67,6 +67,7 @@ static const char *voldown[]  = { "amixer", "-q", "-M", "set", "Master", "2%-", 
 static const char *volzero[]  = { "amixer", "-M", "sset", "Master", "0%", NULL };
 static const char *clipmenu[] = { "clipmenu", "-i", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", normbordercolor, "-sf", selfgcolor, NULL };
 static const char *passmenu[] = { "passmenu", "-i", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", normbordercolor, "-sf", selfgcolor, NULL };
+static const char *dunstclose[] = { "dunstctl", "close", NULL };
 
 static Key keys[] = {
 	/* modifier                     key            function        argument */
@@ -82,6 +83,7 @@ static Key keys[] = {
 	{ MODKEY,               XK_minus,        spawn,          {.v = voldown } },
 	{ MODKEY,               XK_equal,        spawn,          {.v = volup } },
 	{ MODKEY,               XK_Delete,       spawn,          {.v = slock } },
+	{ MODKEY|ControlMask,   XK_space,        spawn,          {.v = dunstclose } },
 	{ MODKEY,               XK_b,            togglebar,      {0} },
 	{ MODKEY,               XK_comma,        focusstack,     {.i = +1 } },
 	{ MODKEY,               XK_period,       focusstack,     {.i = -1 } },
